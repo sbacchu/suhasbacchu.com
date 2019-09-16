@@ -6,7 +6,7 @@ steps:
       - --ciphertext-file=.env.enc
       - --plaintext-file=.env
       - --location=global
-      - --keyring=myproject
+      - --keyring=portfolio-website
       - --key=cloudbuild-env
   # Insert other build steps here
 
