@@ -16,7 +16,7 @@ steps:
 
   # Install
   - name: "gcr.io/cloud-builders/npm"
-    args: ["install", "npm@latest", "-g"]
+    args: ["update", "npm", "-g"]
 
   # Build
   - name: "gcr.io/cloud-builders/npm"
