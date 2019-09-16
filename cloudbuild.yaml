@@ -10,9 +10,13 @@ steps:
       - --key=cloudbuild-env
   # Insert other build steps here
 
-  # Install
+  # Update Node version
   - name: "gcr.io/cloud-builders/npm"
     args: ["install"]
+
+  # Install
+  - name: "gcr.io/cloud-builders/npm"
+    args: ["install", "npm@latest", "-g"]
 
   # Build
   - name: "gcr.io/cloud-builders/npm"
