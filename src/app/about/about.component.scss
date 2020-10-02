@@ -1,58 +1,68 @@
 $primary-color: black;
 $secondary-color: white;
 
-* {
-  box-sizing: border-box;
-}
-h1,
-h2,
-h3 {
-  margin: 0;
+//heading
+
+.lg-heading {
+  font-size: 6rem;
   font-weight: 400;
+}
 
-  &.lg-heading {
-    font-size: 6rem;
+//Bio
+
+.container-bio {
+  padding: 10px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+  .text-secondary {
+    color: $primary-color;
+    font-weight: bold;
+    font-size: 30px;
   }
 
-  &.sm-heading {
-    margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
+  p {
+    padding: 10px;
+    margin-top: 25px;
+    color: $primary-color;
+    font-size: 20px;
   }
 }
 
-// .about-info {
-//   display: grid;
-//   grid-gap: 30px;
-//   grid-template-areas:
-//     "bioimg bio bio"
-//     "job1 job2 job3";
-//   grid-template-columns: repeat(3, 1fr);
+//skils
 
-//   .bio-img {
-//     grid-area: bioimg;
-//     margin: auto;
-//     border-radius: 50%;
-//     border: $secondary-color 3px solid;
-//   }
+.container-skills {
+  margin-top: 25px;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
 
-//   .bio {
-//     grid-area: bio;
-//     font-size: 1.5rem;
-//   }
+  .skill-block {
+    border: 1px $primary-color solid;
+    box-shadow: 2px 2px 2px darkgray;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 10px;
+    color: $primary-color;
 
-//   .job-1 {
-//     grid-area: job1;
-//   }
-//   .job-2 {
-//     grid-area: job2;
-//   }
-//   .job-3 {
-//     grid-area: job3;
-//   }
+    .main-skill {
+      font-weight: bold;
+      padding-top: 5px;
+    }
 
-//   .job {
-//     background: lightgrey;
-//     padding: 0.5rem;
-//     border-bottom: $secondary-color 5px solid;
-//   }
-// }
+    .skill-list {
+      padding-top: 10px;
+    }
+
+  }
+}
+
+@media(max-width: 800px) {
+
+  .container-skills {
+    grid-template-columns: auto;
+  }
+
+}

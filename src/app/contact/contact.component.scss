@@ -1,21 +1,30 @@
 $primary-color: black;
 $secondary-color: white;
 
-* {
-  box-sizing: border-box;
-}
-h1,
-h2,
-h3 {
-  margin: 0;
+//heading
+
+.lg-heading {
+  font-size: 6rem;
   font-weight: 400;
+}
 
-  &.lg-heading {
-    font-size: 6rem;
-  }
+//contact
 
-  &.sm-heading {
-    margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
+.contact-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  .contact-section {
+    border: 1px $primary-color solid;
+    box-shadow: 2px 2px 2px darkgray;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 10px;
+
+    span {
+      font-weight: bold;
+      padding-left: 10px;
+    }
   }
 }
