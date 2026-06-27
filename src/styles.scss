@@ -26,56 +26,151 @@ $SuhasPortfolioWebsite-theme: mat-light-theme($SuhasPortfolioWebsite-primary, $S
 // that you are using.
 @include angular-material-theme($SuhasPortfolioWebsite-theme);
 
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  --color-bg-primary: #0b0f19;
+  --color-bg-secondary: #06090f;
+  --color-bg-card: rgba(17, 24, 39, 0.65);
+  
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+
+  --color-primary: #8b5cf6;
+  --color-secondary: #06b6d4;
+  --color-accent-glow: rgba(139, 92, 246, 0.15);
+  
+  --gradient-accent: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  --gradient-text: linear-gradient(135deg, #a78bfa 0%, #22d3ee 100%);
+  
+  --border-glass: 1px solid rgba(255, 255, 255, 0.08);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --radius-lg: 20px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "montserrat", sans-serif;
+  box-sizing: border-box;
+  font-family: var(--font-sans);
 }
 
+html, body {
+  height: 100%;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-image: 
+    radial-gradient(circle at 10% 20%, var(--color-accent-glow) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 45%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-accent);
+}
+
+// Header / Navbar Styling
 .header {
-  height: 100px;
-  background: black;
-  padding: 0 20px;
-  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: rgba(11, 15, 25, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: var(--border-glass);
+  padding: 0 2rem;
+  color: var(--color-text-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
 
 .logo {
-  line-height: 100px;
-  float: left;
-  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  user-select: none;
 }
 
 .menu {
-  float: right;
-  line-height: 100px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  list-style: none;
+
   a {
-    color: #fff;
-    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    text-transform: capitalize;
+    font-size: 0.95rem;
+    font-weight: 500;
     text-decoration: none;
-    padding: 0 10px;
-    transition: 0.4s;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-smooth);
+    position: relative;
+
+    &:hover {
+      color: var(--color-text-primary);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    &.active {
+      color: #22d3ee;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0.75rem;
+        right: 0.75rem;
+        height: 2px;
+        background: var(--gradient-accent);
+        border-radius: 2px;
+      }
+    }
   }
 }
 
 .show-menu-btn,
 .hide-menu-btn {
-  transition: 0.4s;
-  font-size: 30px;
+  font-size: 24px;
   cursor: pointer;
   display: none;
-}
+  color: var(--color-text-primary);
+  transition: var(--transition-smooth);
 
-.show-menu-btn {
-  float: right;
-  i {
-    line-height: 100px;
+  &:hover {
+    color: var(--color-secondary);
   }
-}
-
-.menu a:hover,
-.show-menu-btn:hover,
-.hide-menu-btn:hover {
-  color: #3498db;
 }
 
 #chk {
@@ -84,48 +179,68 @@ $SuhasPortfolioWebsite-theme: mat-light-theme($SuhasPortfolioWebsite-primary, $S
   z-index: -1111;
 }
 
-.content {
-  padding: 0 20px;
-  img {
-    width: 100%;
-    max-width: 700px;
-    margin: 20px 0;
-  }
-  p {
-    text-align: justify;
-  }
+// Container for child routes
+.container {
+  margin-top: 80px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
 }
 
-@media screen and (max-width: 800px) {
-  .show-menu-btn,
-  .hide-menu-btn {
+// Helper highlight classes
+.text-secondary {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+// Responsive navigation
+@media screen and (max-width: 768px) {
+  .show-menu-btn {
     display: block;
   }
+  
   .menu {
     position: fixed;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100vh;
-    background: #333;
+    background: rgba(6, 9, 15, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     right: -100%;
     top: 0;
     text-align: center;
     padding: 80px 0;
-    line-height: normal;
-    transition: 0.7s;
+    transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    border-left: var(--border-glass);
+    box-shadow: var(--shadow-glass);
+
     a {
       display: block;
-      padding: 20px;
+      font-size: 1.25rem;
+      padding: 1rem;
+      width: 200px;
+      margin: 0.5rem auto;
+
+      &.active::after {
+        bottom: 8px;
+        left: 2rem;
+        right: 2rem;
+      }
     }
   }
+
   .hide-menu-btn {
+    display: block;
     position: absolute;
-    top: 40px;
-    right: 40px;
+    top: 25px;
+    right: 2rem;
   }
+
   #chk:checked ~ .menu {
     right: 0;
   }
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

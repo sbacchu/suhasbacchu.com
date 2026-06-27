@@ -1,105 +1,177 @@
-<main id="about">
-  <h1 class="lg-heading">
-    Experience
+<div class="experience-container">
+  <h1 class="page-title">
+    My <span class="gradient-text-span">Experience</span>
   </h1>
-  <div class="jobs">
-    <h2 class="title">Jobs</h2>
-    <div class="job">
-      <div class="employer">Plants and Soil Sciences, Texas Tech</div>
-      <div class="position">Student Assistant</div>
-      <div class="duration">May 2018 – Present</div>
-      <div class="responsibility">
-        Rewrite a legacy pascal and file-based plant simulation application to
-        Python and DB based application
-      </div>
-      <div class="responsibility">
-        Responsible for code analysis for plant growth, simulation loop and data
-        access and storage redesign
-      </div>
-      <div class="responsibility">
-        Working with professors to evaluate deployment options in AWS.
-        Feasibility analysis completed.
+
+  <div class="experience-grid">
+    <!-- Work Timeline Column -->
+    <div class="timeline-section">
+      <h2 class="section-title"><i class="fas fa-briefcase"></i> Work History</h2>
+      
+      <div class="timeline">
+        <!-- Job 1 -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <div class="timeline-content glass-card">
+            <div class="job-header">
+              <span class="duration-badge active-job">May 2018 – Present</span>
+              <h3 class="job-role">Student Assistant</h3>
+              <h4 class="job-company">Plants and Soil Sciences, Texas Tech</h4>
+            </div>
+            <ul class="job-bullets">
+              <li>Rewrite a legacy Pascal and file-based plant simulation application to a modern Python and database-backed system.</li>
+              <li>Responsible for code analysis for plant growth, simulation loops, and data storage/access redesign.</li>
+              <li>Collaborating with professors to evaluate AWS deployment options. Feasibility analysis completed.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="timeline-content glass-card">
+            <div class="job-header">
+              <span class="duration-badge">May 2019 – Aug 2019</span>
+              <h3 class="job-role">Intern</h3>
+              <h4 class="job-company">MaxUrge, Houston</h4>
+            </div>
+            <ul class="job-bullets">
+              <li>Developed a proof-of-concept mobile application using Flutter.</li>
+              <li>Configured and set up an XMPP server for secure chat integration in the app.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <div class="timeline-content glass-card">
+            <div class="job-header">
+              <span class="duration-badge">Jan 2017 – May 2018</span>
+              <h3 class="job-role">Student Assistant</h3>
+              <h4 class="job-company">High Performance Computing Center, Texas Tech</h4>
+            </div>
+            <ul class="job-bullets">
+              <li>Researched security and database requirements for an NSF-funded Big Data NoSQL Containerized Application.</li>
+              <li>Planned the reconfiguration of BMC footprints for enhanced automation capabilities.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <div class="timeline-content glass-card">
+            <div class="job-header">
+              <span class="duration-badge">Nov 2016 – Dec 2016</span>
+              <h3 class="job-role">Student Assistant</h3>
+              <h4 class="job-company">Cloud Autonomic Computing Center, Texas Tech</h4>
+            </div>
+            <ul class="job-bullets">
+              <li>Assisted with general task requests and basic administration support for the center.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="job">
-      <div class="employer">MaxUrge, Houston</div>
-      <div class="position">Intern</div>
-      <div class="duration">May 2019 – Aug 2019</div>
-      <div class="responsibility">Developed a proof of concept flutter app</div>
-      <div class="responsibility">
-        Set up a XMPP server for chat integration in app
-      </div>
-    </div>
+    <!-- Projects Grid Column -->
+    <div class="projects-section">
+      <h2 class="section-title"><i class="fas fa-cubes"></i> Featured Projects</h2>
+      
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card glass-card">
+          <div class="project-header">
+            <span class="project-date">Sep 2019</span>
+            <h3 class="project-title">Portfolio Website</h3>
+          </div>
+          <p class="project-description">
+            Created a personal website using Angular and hosted on Firebase, using Google Cloud Build CI/CD pipeline.
+          </p>
+          <div class="project-tags">
+            <span class="proj-tag">Angular</span>
+            <span class="proj-tag">Firebase</span>
+            <span class="proj-tag">Cloud Build</span>
+            <span class="proj-tag">CI/CD</span>
+          </div>
+        </div>
 
-    <div class="job">
-      <div class="employer">High Performance Computing Center, Texas Tech</div>
-      <div class="position">Student Assistant</div>
-      <div class="duration">January 2017 – May 2018</div>
-      <div class="responsibility">
-        Researched security requirements and database requirements for NSF
-        funded Big Data NoSQL Containerized Application
-      </div>
-      <div class="responsibility">
-        Planned reconfiguration of BMC footprints for better automation
-      </div>
-    </div>
+        <!-- Project 2 -->
+        <div class="project-card glass-card">
+          <div class="project-header">
+            <span class="project-date">Spring 2019</span>
+            <h3 class="project-title">EmergenSeek</h3>
+          </div>
+          <p class="project-description">
+            Developed a mobile application that automatically calls family and emergency services based on location.
+          </p>
+          <div class="project-tags">
+            <span class="proj-tag">Flutter</span>
+            <span class="proj-tag">AWS</span>
+            <span class="proj-tag">GPS / Geo</span>
+            <span class="proj-tag">Mobile</span>
+          </div>
+        </div>
 
-    <div class="job">
-      <div class="employer">Cloud Autonomic Computing center, Texas Tech</div>
-      <div class="position">Student Assistant</div>
-      <div class="duration">November 2016 - December 2016</div>
-      <div class="responsibility">Helped in basic tasks my employer needed</div>
+        <!-- Project 3 -->
+        <div class="project-card glass-card">
+          <div class="project-header">
+            <span class="project-date">Fall 2018</span>
+            <h3 class="project-title">Budgeting App</h3>
+          </div>
+          <p class="project-description">
+            A cross-platform desktop application built using Electron.js to help students track and manage their budgets.
+          </p>
+          <div class="project-tags">
+            <span class="proj-tag">Electron.js</span>
+            <span class="proj-tag">Node.js</span>
+            <span class="proj-tag">HTML/CSS</span>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card glass-card">
+          <div class="project-header">
+            <span class="project-date">Mid 2016</span>
+            <h3 class="project-title">Club Maintenance</h3>
+          </div>
+          <p class="project-description">
+            Database application with UI which won first place in FBLA district/state conference, and was selected for national presentation.
+          </p>
+          <div class="project-tags">
+            <span class="proj-tag">Java</span>
+            <span class="proj-tag">Database</span>
+            <span class="proj-tag">UI Design</span>
+            <span class="proj-tag">FBLA Winner</span>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card glass-card">
+          <div class="project-header">
+            <span class="project-date">Mid 2015</span>
+            <h3 class="project-title">Internetworking</h3>
+          </div>
+          <p class="project-description">
+            Designed a virtual network topology enabling full-node communication using Cisco routing protocols and CLI.
+          </p>
+          <div class="project-tags">
+            <span class="proj-tag">Cisco CLI</span>
+            <span class="proj-tag">Routing</span>
+            <span class="proj-tag">Protocols</span>
+            <span class="proj-tag">Virtual Labs</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="projects">
-    <h2 class="title">Projects</h2>
-
-    <div class="project">
-      <div class="project-title">Portfolio Website</div>
-      <div class="date">Sep 2019</div>
-      <div class="description">
-        Created a personal website using Angular and hosted on Firebase using
-        Google Cloud Build CI/CD pipeline
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="project-title">EmergenSeek</div>
-      <div class="date">Spring 2019</div>
-      <div class="description">
-        Developed a mobile application that automatically calls family and
-        emergency services based on location
-      </div>
-      <div class="description">Built using flutter and AWS</div>
-    </div>
-
-    <div class="project">
-      <div class="project-title">Budgeting Application</div>
-      <div class="date">Fall 2018</div>
-      <div class="description">
-        A desktop application that helped students manage budget built using
-        Electron.js
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="project-title">Club Membership Maintenance</div>
-      <div class="date">Mid 2016</div>
-      <div class="description">
-        Created a full-fledged application with database and a UI which got me
-        first place in FBLA district and state conference and selected for
-        national level presentation
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="project-title">Internetworking Project</div>
-      <div class="date">Mid 2015</div>
-      <div class="description">
-        Designed virtual network where all computers could communicate using
-        routing protocols.
-      </div>
-    </div>
-  </div>
-</main>
+</div>

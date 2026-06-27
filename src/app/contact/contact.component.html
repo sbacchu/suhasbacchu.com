@@ -1,15 +1,58 @@
-<main id="about">
-  <h1 class="lg-heading">
-    Contact Me
+<div class="contact-container">
+  <h1 class="page-title">
+    Contact <span class="gradient-text-span">Me</span>
   </h1>
-  <div class="contact-boxes">
-    <div>
-      <span class="text-secondary">Email: </span> contact@suhasbacchu.com
+  <p class="contact-subtitle">
+    Have an interesting project or a job opportunity? I'd love to chat. Reach out via email, phone, or copy my details below.
+  </p>
+
+  <div class="contact-card glass-card">
+    <!-- Email Item -->
+    <div class="contact-item">
+      <div class="contact-icon">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div class="contact-details">
+        <span class="contact-label">Email</span>
+        <a href="mailto:contact@suhasbacchu.com" class="contact-value">contact@suhasbacchu.com</a>
+      </div>
+      <button class="copy-btn" (click)="copyToClipboard('contact@suhasbacchu.com', 'email')" title="Copy Email">
+        <i class="fas" [ngClass]="copiedType === 'email' ? 'fa-check success' : 'fa-copy'"></i>
+        <span class="copy-tooltip" *ngIf="copiedType === 'email'">Copied!</span>
+      </button>
     </div>
-    <div><span class="text-secondary">Phone Number: </span> (832) 672-0272</div>
-    <div>
-      <span class="text-secondary">Address: </span> 2202 Mac Davis Ln Apt 713B,
-      Lubbock TX - 79401
+
+    <!-- Phone Item -->
+    <div class="contact-item">
+      <div class="contact-icon">
+        <i class="fas fa-phone"></i>
+      </div>
+      <div class="contact-details">
+        <span class="contact-label">Phone</span>
+        <a href="tel:+18326720272" class="contact-value">(832) 672-0272</a>
+      </div>
+      <button class="copy-btn" (click)="copyToClipboard('(832) 672-0272', 'phone')" title="Copy Phone">
+        <i class="fas" [ngClass]="copiedType === 'phone' ? 'fa-check success' : 'fa-copy'"></i>
+        <span class="copy-tooltip" *ngIf="copiedType === 'phone'">Copied!</span>
+      </button>
+    </div>
+
+    <!-- Address Item -->
+    <div class="contact-item">
+      <div class="contact-icon">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <div class="contact-details">
+        <span class="contact-label">Location</span>
+        <span class="contact-value">2202 Mac Davis Ln Apt 713B, Lubbock TX - 79401</span>
+      </div>
+      <div class="copy-placeholder"></div>
     </div>
   </div>
-</main>
+
+  <div class="contact-actions">
+    <a href="mailto:contact@suhasbacchu.com" class="btn btn-primary">
+      <i class="fas fa-paper-plane"></i> Send Direct Email
+    </a>
+  </div>
+</div>

@@ -1,16 +1,15 @@
-<!-- <app-navbar></app-navbar> -->
 <div class="header">
-  <h2 class="logo">Suhas Bacchu</h2>
+  <h2 class="logo" routerLink="/">Suhas Bacchu</h2>
   <input type="checkbox" id="chk" />
   <label for="chk" class="show-menu-btn">
     <i class="fas fa-ellipsis-h"></i>
   </label>
 
   <ul class="menu">
-    <a href="#" routerLink="/">Home</a>
-    <a href="#" routerLink="/about">About</a>
-    <a href="#" routerLink="/experience">Experience</a>
-    <a href="#" routerLink="/contact">Contact</a>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a routerLink="/experience" routerLinkActive="active">Experience</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
     <label for="chk" class="hide-menu-btn">
       <i class="fas fa-times"></i>
     </label>
