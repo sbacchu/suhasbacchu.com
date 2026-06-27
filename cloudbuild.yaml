@@ -11,7 +11,8 @@ steps:
   # Insert other build steps here
 
   # Install
-  - name: "gcr.io/cloud-builders/npm:node-10.10.0"
+  - name: "node:20"
+    entrypoint: npm
     args: ["install"]
 
   # Update Node version
@@ -19,9 +20,11 @@ steps:
   #   args: ["install", "npm@latest", "-g"]
 
   # Build
-  - name: "gcr.io/cloud-builders/npm:node-10.10.0"
+  - name: "node:20"
+    entrypoint: npm
     args: ["run", "build"]
 
   # Deploy
-  - name: "gcr.io/cloud-builders/npm:node-10.10.0"
+  - name: "node:20"
+    entrypoint: npm
     args: ["run", "deploy"]
